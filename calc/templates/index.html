@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container mt-5">
+        <form class="col-6 mx-auto card p-3 shadow-lg" method="post">
+            {% csrf_token %}
+            <h4 class="mx-auto">Calculator</h4>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Enter Number</label>
+          <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="num1">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Enter Number</label>
+          <input type="number" class="form-control" id="exampleInputPassword1" name="num2">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Select Action To perform</label>
+            <select class="form-select" aria-label="Default select example" name="action">
+                <option selected>Open this select menu</option>
+                <option value="1">Addition</option>
+                <option value="2">Subtraction</option>
+                <option value="3">Division</option>
+                <option value="4">Multipliction</option>
+            </select>
+          </div>
+          <!-- <div class="mb-3">
+            <p>Your Answer is : {{answer}}</p>
+          </div> -->
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <div class="mx-auto">
+            <h4>{{answer}}</h4>
+          </div>
+      </form>
+    </div>
+</body>
+</html>
